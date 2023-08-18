@@ -46,7 +46,7 @@ public class PalabrasReservadas {
     
     public PalabrasReservadas(){
       
-        palabraClave.add(new PalabrasReservadas("as",Tipo.PALABRA_RESERVADA_AS));
+        palabraClave.add(new PalabrasReservadas("/033[34mnas",Tipo.PALABRA_RESERVADA_AS));
         palabraClave.add(new PalabrasReservadas("assert",Tipo.PALABRA_RESERVADA_ASSERT));
         palabraClave.add(new PalabrasReservadas("break",Tipo.PALABRA_RESERVADA_BREAK));
         palabraClave.add(new PalabrasReservadas("class",Tipo.PALABRA_RESERVADA_CLASS));
