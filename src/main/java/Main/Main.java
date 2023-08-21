@@ -9,6 +9,7 @@ import Backend.Token;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import ui.Principal;
 
 /**
  *
@@ -27,12 +28,11 @@ public class Main {
         System.out.println(analizadorlexico.analizarCodigoFuente().get(i).toString());
         
         }*/
-        
-        vista v = new vista();
-        v.setVisible(true);
-        v.setLocationRelativeTo(null);
-        v.enableInputMethods(true);
-        
+
+        Principal principal = new Principal();
+        principal.setVisible(true);
+        principal.setLocationRelativeTo(null);
+        principal.enableInputMethods(true);
         
     }
     

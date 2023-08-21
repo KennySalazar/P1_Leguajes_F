@@ -44,8 +44,9 @@ public class AnalizadorLexico {
                 columna = 0;
                 linea++;
                 indice++;
+                //IGNORA ESPACIOS EN BLANCO
             } else if (Character.isWhitespace(caracter)) {
-                // Ignorar espacios en blanco
+                
 
                 indice++;
                 columna++;
@@ -235,7 +236,6 @@ public class AnalizadorLexico {
                     columna++;
                 }
                 if (indice < codigoFuente.length() && codigoFuente.charAt(indice) == '\'') {
-                    //lexema.append('"');
                     tokens.add(new Token(Token.Tipo.CADENA, lexema.toString(), linea, columna));
                     indice++;
                     columna++;
@@ -310,7 +310,6 @@ public class AnalizadorLexico {
                             lexema.append(codigoFuente.charAt(indice));
                         }
                         
-                        //lexema.append(codigoFuente.charAt(indice));
                         indice++;
                     }
                     
@@ -349,7 +348,7 @@ public class AnalizadorLexico {
                     || caracter == ',' || caracter == ';' || caracter == ':') {
                 columna++;
                 tokens.add(verificarSimboloAritmetico(String.valueOf(caracter), linea, columna));
-                System.out.println(String.valueOf(caracter));
+                //System.out.println(String.valueOf(caracter));
                 indice++;
 
             } else {

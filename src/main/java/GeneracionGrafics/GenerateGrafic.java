@@ -26,32 +26,32 @@ public class GenerateGrafic {
     public void generarGrafico(String cadena, JLabel label){
         
 
-        String inputString = cadena; // Tu string aquí 
+        String inputString = cadena; 
 
-        MutableGraph g = guru.nidi.graphviz.model.Factory.mutGraph("stringToNode").setDirected(true)
-                .graphAttrs().add(Rank.dir(Rank.RankDir.LEFT_TO_RIGHT)); // Configuración del atributo del grafo 
+        MutableGraph grafica = guru.nidi.graphviz.model.Factory.mutGraph("String").setDirected(true)
+                .graphAttrs().add(Rank.dir(Rank.RankDir.LEFT_TO_RIGHT)); 
 
         MutableNode prevNode = null;
-        MutableNode lastNode = null; // Para mantener referencia al último nodo del string 
+        MutableNode lastNode = null; 
         for (char c : inputString.toCharArray()) {
             MutableNode node = guru.nidi.graphviz.model.Factory.mutNode(Character.toString(c));
-            g.add(node);
+            grafica.add(node);
             if (prevNode != null) {
-                prevNode.addLink(node); // Cambiado como mencionaste 
+                prevNode.addLink(node);
             }
             prevNode = node;
-            lastNode = node; // Actualizar el último nodo en cada iteración 
+            lastNode = node; 
         }
 
-        // Cambiar el shape del último nodo ("y") a círculo doble 
+        
         if (lastNode != null) {
             lastNode.add(Shape.DOUBLE_CIRCLE);
         }
 
-        // Generar la imagen y cargarla en el JLabel 
+        
         try {
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            Graphviz.fromGraph(g).render(Format.PNG).toOutputStream(outputStream);
+            Graphviz.fromGraph(grafica).render(Format.PNG).toOutputStream(outputStream);
             byte[] imageBytes = outputStream.toByteArray();
             ImageIcon imageIcon = new ImageIcon(imageBytes);
             label.setIcon(imageIcon);

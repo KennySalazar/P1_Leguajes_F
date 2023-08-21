@@ -73,6 +73,14 @@ public class Principal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         comboNumeros = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        comboBooleanas = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        comboLogicos = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        comboComentarios = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        comboOtros1 = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -82,7 +90,9 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Carga del Archivo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Black", 2, 12), new java.awt.Color(204, 0, 0))); // NOI18N
 
+        jLabel1.setBackground(new java.awt.Color(255, 0, 0));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 51, 0));
         jLabel1.setText("Entrada del texto");
 
         botonCargaDatos.setBackground(new java.awt.Color(255, 102, 0));
@@ -117,11 +127,11 @@ public class Principal extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(99, 99, 99)
+                .addGap(142, 142, 142)
                 .addComponent(jLabel1)
-                .addGap(59, 59, 59)
+                .addGap(73, 73, 73)
                 .addComponent(botonCargaDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(198, Short.MAX_VALUE))
+                .addContainerGap(238, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -176,26 +186,25 @@ public class Principal extends javax.swing.JFrame {
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(250, 250, 250)
-                        .addComponent(botonAnalizarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                        .addGap(315, 315, 315)
+                        .addComponent(botonAnalizarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botonAnalizarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(1, 1, 1)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -222,7 +231,7 @@ public class Principal extends javax.swing.JFrame {
         jDesktopPane2Layout.setHorizontalGroup(
             jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane2Layout.createSequentialGroup()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 811, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jDesktopPane2Layout.setVerticalGroup(
@@ -234,6 +243,8 @@ public class Principal extends javax.swing.JFrame {
         );
 
         botonGenerarGrafico.addTab("REPORTES", jDesktopPane2);
+
+        jDesktopPane3.setBackground(new java.awt.Color(255, 153, 0));
 
         comboIdS.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -254,17 +265,62 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("P. Clave");
+        jLabel4.setText("Palabras Clave");
 
-        jLabel5.setText("S. Matematicos");
+        comboSMatems.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboSMatemsActionPerformed(evt);
+            }
+        });
 
-        comboCadenas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jLabel5.setText("Simbolos Matematicos");
+
+        comboCadenas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboCadenasActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Cadenas");
 
-        comboNumeros.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboNumeros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboNumerosActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Numeros");
+
+        jLabel8.setText("Otros");
+
+        jLabel9.setText("Logicos");
+
+        comboLogicos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                comboLogicosMouseClicked(evt);
+            }
+        });
+        comboLogicos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboLogicosActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Comentarios");
+
+        comboComentarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboComentariosActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Booleanas");
+
+        comboOtros1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboOtros1ActionPerformed(evt);
+            }
+        });
 
         jDesktopPane3.setLayer(comboIdS, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane3.setLayer(label, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -277,6 +333,14 @@ public class Principal extends javax.swing.JFrame {
         jDesktopPane3.setLayer(jLabel6, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane3.setLayer(comboNumeros, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane3.setLayer(jLabel7, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane3.setLayer(jLabel8, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane3.setLayer(comboBooleanas, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane3.setLayer(jLabel9, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane3.setLayer(comboLogicos, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane3.setLayer(jLabel10, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane3.setLayer(comboComentarios, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane3.setLayer(jLabel11, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane3.setLayer(comboOtros1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane3Layout = new javax.swing.GroupLayout(jDesktopPane3);
         jDesktopPane3.setLayout(jDesktopPane3Layout);
@@ -284,28 +348,49 @@ public class Principal extends javax.swing.JFrame {
             jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane3Layout.createSequentialGroup()
                 .addGap(55, 55, 55)
+                .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(comboCadenas, 0, 184, Short.MAX_VALUE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel9)
+                    .addComponent(comboLogicos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(comboIdS, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label, javax.swing.GroupLayout.PREFERRED_SIZE, 543, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jDesktopPane3Layout.createSequentialGroup()
-                        .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(comboCadenas, javax.swing.GroupLayout.Alignment.LEADING, 0, 184, Short.MAX_VALUE)
-                                .addComponent(comboIdS, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel6))
-                        .addGap(27, 27, 27)
+                        .addGap(74, 74, 74)
                         .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jDesktopPane3Layout.createSequentialGroup()
-                                .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(comboClaves, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel4)
-                                    .addComponent(comboNumeros, 0, 154, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jDesktopPane3Layout.createSequentialGroup()
+                                .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(comboNumeros, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(comboComentarios, 0, 147, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(comboSMatems, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(83, Short.MAX_VALUE))
+                                    .addComponent(comboBooleanas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(comboOtros1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane3Layout.createSequentialGroup()
+                        .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jDesktopPane3Layout.createSequentialGroup()
+                                .addGap(76, 76, 76)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jDesktopPane3Layout.createSequentialGroup()
+                                .addGap(74, 74, 74)
+                                .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(comboClaves, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                        .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(comboSMatems, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(125, Short.MAX_VALUE))
+            .addGroup(jDesktopPane3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jDesktopPane3Layout.setVerticalGroup(
             jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -323,14 +408,26 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel7))
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboCadenas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(label, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(119, Short.MAX_VALUE))
+                    .addComponent(comboNumeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboOtros1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jDesktopPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboLogicos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboComentarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboBooleanas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addComponent(label, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57))
         );
 
         botonGenerarGrafico.addTab("GENERAR GRÁFICO", jDesktopPane3);
@@ -344,6 +441,11 @@ public class Principal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Acerca de");
+        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu2MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -352,7 +454,9 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(botonGenerarGrafico)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(botonGenerarGrafico, javax.swing.GroupLayout.PREFERRED_SIZE, 828, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -376,22 +480,60 @@ public class Principal extends javax.swing.JFrame {
 
     private void botonAnalizarEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAnalizarEntradaActionPerformed
         // TODO add your handling code here:
+        salidaErrores.setText(" ");
         limpiarItems();
         leerErrores();
         cargarItems();
-        
+
+
     }//GEN-LAST:event_botonAnalizarEntradaActionPerformed
 
-    private void limpiarItems(){
+    private void limpiarItems() {
+        try {
+
+            this.comboClaves.removeAllItems();
+
+        } catch (NullPointerException e) {
+
+        }
         try {
             this.comboIdS.removeAllItems();
         } catch (NullPointerException e) {
         }
-        
-        //inicializar todos los demas combos
+        try {
+            this.comboSMatems.removeAllItems();
+        } catch (NullPointerException e) {
+        }
+        try {
+            this.comboCadenas.removeAllItems();
+        } catch (NullPointerException e) {
+        }
+        try {
+            this.comboNumeros.removeAllItems();
+        } catch (NullPointerException e) {
+        }
+        try {
+            this.comboOtros1.removeAllItems();
+        } catch (NullPointerException e) {
+        }
+        try {
+            this.comboLogicos.removeAllItems();
+        } catch (NullPointerException e) {
+        }
+        try {
+            this.comboComentarios.removeAllItems();
+        } catch (NullPointerException e) {
+        }
+        try {
+            this.comboBooleanas.removeAllItems();
+        } catch (NullPointerException e) {
+        }
+
     }
+
+
     private void comboIdSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboIdSMouseClicked
-        
+
     }//GEN-LAST:event_comboIdSMouseClicked
 
     private void comboIdSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboIdSActionPerformed
@@ -402,28 +544,114 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         generarGrafico(this.comboClaves);
     }//GEN-LAST:event_comboClavesActionPerformed
-    public void generarGrafico(JComboBox combo){
+
+    private void comboLogicosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comboLogicosMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboLogicosMouseClicked
+
+    private void comboLogicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboLogicosActionPerformed
+        // TODO add your handling code here:
+        generarGrafico(this.comboLogicos);
+    }//GEN-LAST:event_comboLogicosActionPerformed
+
+    private void comboComentariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboComentariosActionPerformed
+        // TODO add your handling code here:
+        generarGrafico(this.comboComentarios);
+    }//GEN-LAST:event_comboComentariosActionPerformed
+
+    private void comboSMatemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboSMatemsActionPerformed
+        // TODO add your handling code here:
+        generarGrafico(this.comboSMatems);
+    }//GEN-LAST:event_comboSMatemsActionPerformed
+
+    private void comboCadenasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboCadenasActionPerformed
+        // TODO add your handling code here:
+        generarGrafico(this.comboCadenas);
+    }//GEN-LAST:event_comboCadenasActionPerformed
+
+    private void comboNumerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboNumerosActionPerformed
+        // TODO add your handling code here:
+        generarGrafico(this.comboNumeros);
+    }//GEN-LAST:event_comboNumerosActionPerformed
+
+    private void comboOtros1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboOtros1ActionPerformed
+        // TODO add your handling code here:
+        generarGrafico(this.comboOtros1);
+    }//GEN-LAST:event_comboOtros1ActionPerformed
+
+    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+        // TODO add your handling code here:
+        acercaDe();
+    }//GEN-LAST:event_jMenu2MouseClicked
+    public void generarGrafico(JComboBox combo) {
         GenerateGrafic gg = new GenerateGrafic();
         gg.generarGrafico(combo.getSelectedItem().toString(), this.label);
     }
-  
-    private void cargarItems(){
+
+    private void cargarItems() {
         AnalizadorLexico analizadorlexico = new AnalizadorLexico(entrada.getText());
         List<Token> tokens = analizadorlexico.analizarCodigoFuente();
         for (Token token : tokens) {
-            if(token.getTipo().equals(Tipo.IDENTIFICADOR)){
-                this.comboIdS.addItem(token.getLexema());
-            }else if(token.getTipo().equals(Tipo.ERROR)){
-                
-            }else if(token.getTipo().equals(Tipo.ARITMETICO_DIVISION)||token.getTipo().equals(Tipo.ARITMETICO_EXPONENTE)){
-                this.comboSMatems.addItem(token.getLexema());
-            }else if(token.getTipo().equals(Tipo.CONSTANTE_ENTERA)||token.getTipo().equals(Tipo.CONSTANTE_DECIMAL)){
-                this.comboNumeros.addItem(token.getLexema());
-            }else{
-                this.comboClaves.addItem(token.getLexema());
+            switch (token.getTipo()) {
+                case IDENTIFICADOR:
+                    this.comboIdS.addItem(token.getLexema());
+                    break;
+                case ERROR:
+                    break;
+                case ARITMETICO_SUMA:
+                case ARITMETICO_RESTA:
+                case ARITMETICO_EXPONENTE:
+                case ARITMETICO_DIVISION:
+                case ARITMETICO_MODULO:
+                case ARITMETICO_MULTIPLICACION:
+                case COMPARACION_IGUAL:
+                case COMPARACION_DIFERENTE:
+                case COMPARACION_MAYOR_QUE:
+                case COMPARACION_MENOR_QUE:
+                case COMPARACION_MAYOR_O_IGUAL_QUE:
+                case COMPARACION_MENOR_O_IGUAL_QUE:
+                case ASIGNACION_IGUAL:
+                case ASIGNACION_MULTIPLICACION:
+                case ASIGNACION:
+                    this.comboSMatems.addItem(token.getLexema());
+                    break;
+                case CONSTANTE_ENTERA:
+                case CONSTANTE_DECIMAL:
+                    this.comboNumeros.addItem(token.getLexema());
+                    break;
+                case PARENTESI_APERTURA:
+                case PARENTESI_CIERRE:
+                case LLAVE_APERTURA:
+                case LLAVE_CIERRE:
+                case CORCHETE_APERTURA:
+                case CORCHETE_CIERRE:
+                case COMA:
+                case PUNTO_COMA:
+                case DOS_PUNTOS:
+                    this.comboOtros1.addItem(token.getLexema());
+                    break;
+                case CADENA:
+                    this.comboCadenas.addItem(token.getLexema());
+                    break;
+                case OPERADOR_LOGICO_Y:
+                case OPERADOR_LOGICO_O:
+                case OPERADOR_LOGICO_NEGACION:
+                    this.comboLogicos.addItem(token.getLexema());
+                    break;
+                case COMENTARIO:
+                    this.comboComentarios.addItem(token.getLexema());
+                    break;
+                case BOOLEANA_TRUE:
+                case BOOLEANA_FALSE:
+                    this.comboBooleanas.addItem(token.getLexema());
+                    break;
+                default:
+                    this.comboClaves.addItem(token.getLexema());
+                    break;
             }
         }
     }
+
     public String leerArchivo() {
         PalabrasReservadas pr = new PalabrasReservadas();
         String txt = "";
@@ -432,16 +660,10 @@ public class Principal extends javax.swing.JFrame {
         if (respuesta == 0) {
             txt = cargaArchivo(fileCh.getSelectedFile().getAbsolutePath());
             for (int i = 0; i < txt.length(); i++) {
-                for (PalabrasReservadas prv : pr.palabraClave) {
 
-                    if (txt.equals(prv.getLexema())) {
-                        this.entrada.setText(txt);
-                        this.entrada.setForeground(Color.red);
-                    } else {
-                        this.entrada.setText(txt);
-                        this.entrada.setForeground(Color.BLUE);
-                    }
-                }
+                this.entrada.setText(txt);
+                this.entrada.setForeground(Color.blue);
+
             }
         } else {
             JOptionPane.showMessageDialog(this, "No se pudo cargar correctamente el archivo");
@@ -464,7 +686,6 @@ public class Principal extends javax.swing.JFrame {
             lector.close();
             contenido = cadena.toString();
 
-            System.out.println(contenido);
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -504,10 +725,19 @@ public class Principal extends javax.swing.JFrame {
         for (Token token : tokens) {
             fila[0] = token.getTipo().toString();
             fila[2] = token.getLexema();
-            if (token.getTipo().equals(Tipo.IDENTIFICADOR)) {
-                fila[1] = "(_([0-9]|_|[a-z][A-Z])*)|([a-z][A-Z]+([0-9]|_|[a-z][A-Z])*)";
-            } else {
-                fila[1] = token.getLexema();
+            switch (token.getTipo()) {
+                case IDENTIFICADOR:
+                    fila[1] = "(_([0-9]|_|[a-z][A-Z])*)|([a-z][A-Z]+([0-9]|_|[a-z][A-Z])*)";
+                    break;
+                case COMENTARIO:
+                    fila[1] = "([#]([0-9]|_|[a-z][A-Z])*)|([a-z][A-Z]+([0-9]|_|[a-z][A-Z])*)";
+                    break;
+                case CADENA:
+                    fila[1] = "(([\"]|[\']([0-9]|_|[a-z][A-Z])*)|([a-z][A-Z]+([0-9]|_|[a-z][A-Z])*)[\"]|[\'])";
+                    break;
+                default:
+                    fila[1] = token.getLexema();
+                    break;
             }
             fila[3] = String.valueOf(token.getLinea());
             fila[4] = String.valueOf(token.getColumna());
@@ -518,41 +748,6 @@ public class Principal extends javax.swing.JFrame {
 
     }
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        });
-    }
-
     public void mostrarAyuda() {
         Ayuda1 ayuda = new Ayuda1(this);
         ayuda.setLocationRelativeTo(this);
@@ -560,25 +755,39 @@ public class Principal extends javax.swing.JFrame {
 
     }
 
+    public void acercaDe() {
+        AcercaDe acercaDe = new AcercaDe();
+        acercaDe.setLocationRelativeTo(this);
+        acercaDe.setVisible(true);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAnalizarEntrada;
     private javax.swing.JButton botonCargaDatos;
     private javax.swing.JTabbedPane botonGenerarGrafico;
+    private javax.swing.JComboBox<String> comboBooleanas;
     private javax.swing.JComboBox<String> comboCadenas;
     private javax.swing.JComboBox<String> comboClaves;
+    private javax.swing.JComboBox<String> comboComentarios;
     private javax.swing.JComboBox<String> comboIdS;
+    private javax.swing.JComboBox<String> comboLogicos;
     private javax.swing.JComboBox<String> comboNumeros;
+    private javax.swing.JComboBox<String> comboOtros1;
     private javax.swing.JComboBox<String> comboSMatems;
     private javax.swing.JTextArea entrada;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JDesktopPane jDesktopPane3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
