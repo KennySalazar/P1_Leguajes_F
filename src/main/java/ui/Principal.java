@@ -10,17 +10,28 @@ import Backend.Token.Tipo;
 import Backend.analizador.PalabrasReservadas;
 import GeneracionGrafics.GenerateGrafic;
 import java.awt.Color;
+import static java.awt.Color.black;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.print.attribute.AttributeSet;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.Style;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyleContext;
+import javax.swing.text.StyledDocument;
 
 /**
  *
@@ -52,8 +63,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         botonCargaDatos = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        entrada = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        entrada = new javax.swing.JTextPane();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        entrada1 = new javax.swing.JTextPane();
         botonAnalizarEntrada = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -106,20 +121,41 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        entrada.setBackground(new java.awt.Color(204, 204, 255));
-        entrada.setColumns(20);
-        entrada.setRows(5);
-        jScrollPane2.setViewportView(entrada);
+        jScrollPane3.setViewportView(entrada);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(jScrollPane3)
+        );
+
+        jLabel2.setBackground(new java.awt.Color(255, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel2.setText("Salida de texto con colores");
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        entrada1.setEditable(false);
+        entrada1.setBackground(new java.awt.Color(0, 0, 0));
+        jScrollPane5.setViewportView(entrada1);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -127,23 +163,32 @@ public class Principal extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(142, 142, 142)
+                .addGap(68, 68, 68)
                 .addComponent(jLabel1)
-                .addGap(73, 73, 73)
+                .addGap(42, 42, 42)
                 .addComponent(botonCargaDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(238, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(85, 85, 85))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonCargaDatos))
+                    .addComponent(botonCargaDatos)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         botonAnalizarEntrada.setBackground(new java.awt.Color(204, 255, 51));
@@ -156,10 +201,11 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Errores", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 2, 14))); // NOI18N
+        jPanel3.setBackground(new java.awt.Color(0, 0, 204));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Errores", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 2, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel3.setFont(new java.awt.Font("Segoe UI Black", 2, 14)); // NOI18N
 
-        salidaErrores.setBackground(new java.awt.Color(204, 204, 204));
+        salidaErrores.setEditable(false);
         salidaErrores.setColumns(20);
         salidaErrores.setRows(5);
         jScrollPane1.setViewportView(salidaErrores);
@@ -174,7 +220,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
         );
 
         jDesktopPane1.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -187,24 +233,22 @@ public class Principal extends javax.swing.JFrame {
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(315, 315, 315)
-                        .addComponent(botonAnalizarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(61, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 811, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addGap(317, 317, 317)
+                .addComponent(botonAnalizarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonAnalizarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -479,11 +523,19 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCargaDatosActionPerformed
 
     private void botonAnalizarEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAnalizarEntradaActionPerformed
-        // TODO add your handling code here:
+        
+        entrada1.setText(entrada.getText());
         salidaErrores.setText(" ");
         limpiarItems();
         leerErrores();
+
         cargarItems();
+
+        try {
+            combiarColor();
+        } catch (BadLocationException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
 
     }//GEN-LAST:event_botonAnalizarEntradaActionPerformed
@@ -652,6 +704,99 @@ public class Principal extends javax.swing.JFrame {
         }
     }
 
+    public void combiarColor() throws BadLocationException {
+
+        AnalizadorLexico analizadorlexico = new AnalizadorLexico(entrada.getText());
+        List<Token> tokens = analizadorlexico.analizarCodigoFuente();
+
+        StyledDocument doc = entrada1.getStyledDocument();
+
+        SimpleAttributeSet blackStyle = new SimpleAttributeSet();
+        StyleConstants.setForeground(blackStyle, Color.WHITE);
+
+        SimpleAttributeSet blueStyle = new SimpleAttributeSet();
+        StyleConstants.setForeground(blueStyle, Color.BLUE);
+
+        SimpleAttributeSet magentaStyle = new SimpleAttributeSet();
+        StyleConstants.setForeground(magentaStyle, Color.MAGENTA);
+
+        SimpleAttributeSet redStyle = new SimpleAttributeSet();
+        StyleConstants.setForeground(redStyle, Color.RED);
+
+        SimpleAttributeSet grayStyle = new SimpleAttributeSet();
+        StyleConstants.setForeground(grayStyle, Color.GRAY);
+
+        SimpleAttributeSet greenStyle = new SimpleAttributeSet();
+        StyleConstants.setForeground(greenStyle, Color.GREEN);
+
+        for (Token token : tokens) {
+            if (token.getTipo().equals(Tipo.ARITMETICO_SUMA) || token.getTipo().equals(Tipo.ARITMETICO_RESTA) || token.getTipo().equals(Tipo.ARITMETICO_MULTIPLICACION)
+                    || token.getTipo().equals(Tipo.ARITMETICO_DIVISION) || token.getTipo().equals(Tipo.ARITMETICO_EXPONENTE) || token.getTipo().equals(Tipo.ARITMETICO_MODULO)
+                    || token.getTipo().equals(Tipo.COMPARACION_IGUAL) || token.getTipo().equals(Tipo.COMPARACION_DIFERENTE) || token.getTipo().equals(Tipo.COMPARACION_MAYOR_O_IGUAL_QUE)
+                    || token.getTipo().equals(Tipo.COMPARACION_MAYOR_QUE) || token.getTipo().equals(Tipo.COMPARACION_MENOR_O_IGUAL_QUE) || token.getTipo().equals(Tipo.COMPARACION_MENOR_QUE)
+                    || token.getTipo().equals(Tipo.ASIGNACION) || token.getTipo().equals(Tipo.ASIGNACION_IGUAL) || token.getTipo().equals(Tipo.ASIGNACION_MULTIPLICACION)
+                    || token.getTipo().equals(Tipo.OPERADOR_LOGICO_Y) || token.getTipo().equals(Tipo.OPERADOR_LOGICO_O) || token.getTipo().equals(Tipo.OPERADOR_LOGICO_NEGACION)) {
+                try {
+                    
+                    doc.insertString(token.getLexema().length(), token.getLexema(), blueStyle);
+                    token.setLexema(token.getLexema());
+
+                } catch (IllegalStateException ex) {
+
+                }
+            } else if (token.getTipo().equals(Tipo.IDENTIFICADOR)) {
+                try {
+
+                    doc.insertString(token.getLexema().length(), token.getLexema(), blackStyle);
+                    token.setLexema(token.getLexema());
+                } catch (IllegalStateException ex) {
+
+                }
+            } else if (token.getTipo().equals(Tipo.CONSTANTE_ENTERA) || token.getTipo().equals(Tipo.CONSTANTE_DECIMAL) || token.getTipo().equals(Tipo.CADENA)
+                    || token.getTipo().equals(Tipo.BOOLEANA_TRUE) || token.getTipo().equals(Tipo.BOOLEANA_FALSE)) {
+                try {
+
+                    doc.insertString(token.getLexema().length(), token.getLexema(), redStyle);
+                    token.setLexema(token.getLexema());
+                } catch (IllegalStateException ex) {
+
+                }
+            } else if (token.getTipo().equals(Tipo.COMENTARIO)) {
+                try {
+
+                    doc.insertString(token.getLexema().length(), token.getLexema(), grayStyle);
+                    token.setLexema(token.getLexema());
+                } catch (IllegalStateException ex) {
+
+                }
+
+            } else if (token.getTipo().equals(Tipo.PARENTESI_APERTURA) || token.getTipo().equals(Tipo.PARENTESI_CIERRE) || token.getTipo().equals(Tipo.LLAVE_APERTURA)
+                    || token.getTipo().equals(Tipo.LLAVE_CIERRE) || token.getTipo().equals(Tipo.CORCHETE_APERTURA) || token.getTipo().equals(Tipo.CORCHETE_CIERRE)
+                    || token.getTipo().equals(Tipo.COMA) || token.getTipo().equals(Tipo.PUNTO_COMA) || token.getTipo().equals(Tipo.DOS_PUNTOS)) {
+                try {
+
+                    doc.insertString(token.getLexema().length(), token.getLexema(), greenStyle);
+                    token.setLexema(token.getLexema());
+                } catch (IllegalStateException ex) {
+
+                }
+            } else if (token.getTipo().equals(Tipo.ERROR)) {
+
+            } else {
+                try {
+
+                    doc.insertString(token.getLexema().length(), token.getLexema(), magentaStyle);
+                    token.setLexema(token.getLexema());
+                } catch (IllegalStateException ex) {
+
+                }
+            }
+        }
+        
+       
+        
+    }
+
     public String leerArchivo() {
         PalabrasReservadas pr = new PalabrasReservadas();
         String txt = "";
@@ -662,7 +807,6 @@ public class Principal extends javax.swing.JFrame {
             for (int i = 0; i < txt.length(); i++) {
 
                 this.entrada.setText(txt);
-                this.entrada.setForeground(Color.blue);
 
             }
         } else {
@@ -774,13 +918,15 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboNumeros;
     private javax.swing.JComboBox<String> comboOtros1;
     private javax.swing.JComboBox<String> comboSMatems;
-    private javax.swing.JTextArea entrada;
+    private javax.swing.JTextPane entrada;
+    private javax.swing.JTextPane entrada1;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JDesktopPane jDesktopPane3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -794,9 +940,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JLabel label;
     private javax.swing.JTextArea salidaErrores;
     private javax.swing.JTable tablaTokens;

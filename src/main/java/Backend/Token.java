@@ -148,11 +148,11 @@ public class Token {
 
     @Override
     public String toString() {
-        return "Token{"
-                + "tipo=" + tipo
-                + ", lexema='" + lexema + '\''
-                +", linea="+linea
-                +", columna="+columna
+        return "Token { "
+                + "tipo = " + tipo
+                + ", lexema = '" + lexema + '\''
+                +", linea = " +linea
+                +", columna = " +columna
                 + '}';
     }
     
