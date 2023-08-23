@@ -18,6 +18,11 @@
             <artifactId>logback-classic</artifactId> 
             <version>1.2.3</version> 
         </dependency>
+         <dependency>
+            <groupId>org.netbeans.external</groupId>
+            <artifactId>AbsoluteLayout</artifactId>
+            <version>RELEASE140</version>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -25,5 +30,31 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
     <name>P1AnalizadorLexico</name>
+        <build>
+        <plugins>
+            <plugin>
+               <artifactId>maven-assembly-plugin</artifactId>
+                    <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>Main.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+
+            </plugin>
+        </plugins>
+    </build>
     
 </project>

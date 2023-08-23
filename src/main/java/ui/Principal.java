@@ -763,9 +763,9 @@ public class Principal extends javax.swing.JFrame {
                 }
             } else if (token.getTipo().equals(Tipo.COMENTARIO)) {
                 try {
-
+                    
                     doc.insertString(token.getLexema().length(), token.getLexema(), grayStyle);
-                    token.setLexema(token.getLexema());
+                    token.setLexema(token.getLexema());             
                 } catch (IllegalStateException ex) {
 
                 }
