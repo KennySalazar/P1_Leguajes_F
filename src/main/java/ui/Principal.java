@@ -730,66 +730,87 @@ public class Principal extends javax.swing.JFrame {
         StyleConstants.setForeground(greenStyle, Color.GREEN);
 
         for (Token token : tokens) {
-            if (token.getTipo().equals(Tipo.ARITMETICO_SUMA) || token.getTipo().equals(Tipo.ARITMETICO_RESTA) || token.getTipo().equals(Tipo.ARITMETICO_MULTIPLICACION)
-                    || token.getTipo().equals(Tipo.ARITMETICO_DIVISION) || token.getTipo().equals(Tipo.ARITMETICO_EXPONENTE) || token.getTipo().equals(Tipo.ARITMETICO_MODULO)
-                    || token.getTipo().equals(Tipo.COMPARACION_IGUAL) || token.getTipo().equals(Tipo.COMPARACION_DIFERENTE) || token.getTipo().equals(Tipo.COMPARACION_MAYOR_O_IGUAL_QUE)
-                    || token.getTipo().equals(Tipo.COMPARACION_MAYOR_QUE) || token.getTipo().equals(Tipo.COMPARACION_MENOR_O_IGUAL_QUE) || token.getTipo().equals(Tipo.COMPARACION_MENOR_QUE)
-                    || token.getTipo().equals(Tipo.ASIGNACION) || token.getTipo().equals(Tipo.ASIGNACION_IGUAL) || token.getTipo().equals(Tipo.ASIGNACION_MULTIPLICACION)
-                    || token.getTipo().equals(Tipo.OPERADOR_LOGICO_Y) || token.getTipo().equals(Tipo.OPERADOR_LOGICO_O) || token.getTipo().equals(Tipo.OPERADOR_LOGICO_NEGACION)) {
-                try {
-                    
-                    doc.insertString(token.getLexema().length(), token.getLexema(), blueStyle);
-                    token.setLexema(token.getLexema());
-
-                } catch (IllegalStateException ex) {
-
-                }
-            } else if (token.getTipo().equals(Tipo.IDENTIFICADOR)) {
-                try {
-
-                    doc.insertString(token.getLexema().length(), token.getLexema(), blackStyle);
-                    token.setLexema(token.getLexema());
-                } catch (IllegalStateException ex) {
-
-                }
-            } else if (token.getTipo().equals(Tipo.CONSTANTE_ENTERA) || token.getTipo().equals(Tipo.CONSTANTE_DECIMAL) || token.getTipo().equals(Tipo.CADENA)
-                    || token.getTipo().equals(Tipo.BOOLEANA_TRUE) || token.getTipo().equals(Tipo.BOOLEANA_FALSE)) {
-                try {
-
-                    doc.insertString(token.getLexema().length(), token.getLexema(), redStyle);
-                    token.setLexema(token.getLexema());
-                } catch (IllegalStateException ex) {
-
-                }
-            } else if (token.getTipo().equals(Tipo.COMENTARIO)) {
-                try {
-                    
-                    doc.insertString(token.getLexema().length(), token.getLexema(), grayStyle);
-                    token.setLexema(token.getLexema());             
-                } catch (IllegalStateException ex) {
-
-                }
-
-            } else if (token.getTipo().equals(Tipo.PARENTESI_APERTURA) || token.getTipo().equals(Tipo.PARENTESI_CIERRE) || token.getTipo().equals(Tipo.LLAVE_APERTURA)
-                    || token.getTipo().equals(Tipo.LLAVE_CIERRE) || token.getTipo().equals(Tipo.CORCHETE_APERTURA) || token.getTipo().equals(Tipo.CORCHETE_CIERRE)
-                    || token.getTipo().equals(Tipo.COMA) || token.getTipo().equals(Tipo.PUNTO_COMA) || token.getTipo().equals(Tipo.DOS_PUNTOS)) {
-                try {
-
-                    doc.insertString(token.getLexema().length(), token.getLexema(), greenStyle);
-                    token.setLexema(token.getLexema());
-                } catch (IllegalStateException ex) {
-
-                }
-            } else if (token.getTipo().equals(Tipo.ERROR)) {
-
-            } else {
-                try {
-
-                    doc.insertString(token.getLexema().length(), token.getLexema(), magentaStyle);
-                    token.setLexema(token.getLexema());
-                } catch (IllegalStateException ex) {
-
-                }
+            switch (token.getTipo()) {
+                case ARITMETICO_SUMA:
+                case ARITMETICO_RESTA:
+                case ARITMETICO_MULTIPLICACION:
+                case ARITMETICO_DIVISION:
+                case ARITMETICO_EXPONENTE:
+                case ARITMETICO_MODULO:
+                case COMPARACION_IGUAL:
+                case COMPARACION_DIFERENTE:
+                case COMPARACION_MAYOR_O_IGUAL_QUE:
+                case COMPARACION_MAYOR_QUE:
+                case COMPARACION_MENOR_O_IGUAL_QUE:
+                case COMPARACION_MENOR_QUE:
+                case ASIGNACION:
+                case ASIGNACION_IGUAL:
+                case ASIGNACION_MULTIPLICACION:
+                case OPERADOR_LOGICO_Y:
+                case OPERADOR_LOGICO_O:
+                case OPERADOR_LOGICO_NEGACION:
+                    try {
+                        
+                        doc.insertString(token.getLexema().length(), token.getLexema(), blueStyle);
+                        token.setLexema(token.getLexema());
+                        
+                    } catch (IllegalStateException ex) {
+                        
+                    }   break;
+                case IDENTIFICADOR:
+                    try {
+                        
+                        doc.insertString(token.getLexema().length(), token.getLexema(), blackStyle);
+                        token.setLexema(token.getLexema());
+                    } catch (IllegalStateException ex) {
+                        
+                    }   break;
+                case CONSTANTE_ENTERA:
+                case CONSTANTE_DECIMAL:
+                case CADENA:
+                case BOOLEANA_TRUE:
+                case BOOLEANA_FALSE:
+                    try {
+                        
+                        doc.insertString(token.getLexema().length(), token.getLexema(), redStyle);
+                        token.setLexema(token.getLexema());
+                    } catch (IllegalStateException ex) {
+                        
+                    }   break;
+                case COMENTARIO:
+                    try {
+                        
+                        doc.insertString(token.getLexema().length(), token.getLexema(), grayStyle);
+                        token.setLexema(token.getLexema());
+                    } catch (IllegalStateException ex) {
+                        
+                    }   break;
+                case PARENTESI_APERTURA:
+                case PARENTESI_CIERRE:
+                case LLAVE_APERTURA:
+                case LLAVE_CIERRE:
+                case CORCHETE_APERTURA:
+                case CORCHETE_CIERRE:
+                case COMA:
+                case PUNTO_COMA:
+                case DOS_PUNTOS:
+                    try {
+                        
+                        doc.insertString(token.getLexema().length(), token.getLexema(), greenStyle);
+                        token.setLexema(token.getLexema());
+                    } catch (IllegalStateException ex) {
+                        
+                    }   break;
+                case ERROR:
+                    break;
+                default:
+                    try {
+                            
+                            doc.insertString(token.getLexema().length(), token.getLexema(), magentaStyle);
+                            token.setLexema(token.getLexema());
+                            } catch (IllegalStateException ex) {
+                                    
+                                    }   break;
             }
         }
         
